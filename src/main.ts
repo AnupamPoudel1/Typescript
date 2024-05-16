@@ -1,17 +1,29 @@
-let username = "Anupam Poudel";
-console.log(username);
+let myName: string = 'Anupam Poudel';
+let myAge: number;
+let isMarried: boolean;
 
-// the type script accepts this as js accepts this 
-// but the type scripts shows warning as you cant divide number by string
+let herName: string | number //union data type can be either string or number and is not limited to 2 data type
 
-// let a = 18;
-// let b = '6';
-// let c = 3
-// console.log(a / b);
+let rE: RegExp = /\w+/g; //typescript also suggests data types on its own if not defined as example this is regExp 
+
+myAge = 23;
+isMarried = true;
+herName = 7673;
+herName = "rose";
+
+console.log("Name: " + myName + ", Age: " + myAge + ", Married: " + isMarried);
+console.log("Married to " + herName)
 
 
-let a: number = 18;
-let b: string = '12';
-let c: number = 6;
+// this is not possible in typescript because typescript sets default type to any
+// so we have to define data type of a and b to make this function work
 
-console.log(a / c);
+// const sum = (a, b) => {
+//     return a + b
+// }
+
+const sum = (a: number, b: number) => {
+    return a + b;
+}
+
+console.log(sum(3, 5));
